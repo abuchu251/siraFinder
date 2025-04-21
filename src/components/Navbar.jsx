@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { HiOutlineDocumentText } from "react-icons/hi2";
 
 const Nav = styled.nav`
-  margin: 0 auto;
+  margin: 2rem auto;
   width: 80%;
   padding: 10px 20px;
   display: flex;
@@ -49,7 +49,7 @@ function Navbar() {
       <Logo />
       <Links>
         <StyledNavLink to="/">Home</StyledNavLink>
-        <StyledNavLink>Jobs</StyledNavLink>
+        <StyledNavLink to="/jobs">Jobs</StyledNavLink>
         <StyledNavLink>Application Tracker</StyledNavLink>
         <StyledNavLink>Interview prep</StyledNavLink>
       </Links>

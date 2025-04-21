@@ -4,15 +4,14 @@ import styled from "styled-components";
 import Navbar from "./navbar";
 import HeroCardSmall from "./HeroCardSmall";
 const FullHero = styled.section`
-  background-color: alice#0a6f97;
-  width: 100dvw;
-  height: 100dvh;
-  padding: 2rem 0;
+  background-color: alicevar(--primary-base);
+  /* width: 100dvw; */
+  /* height: 100dvh; */
 `;
 const Hero = styled.div`
   width: 80dvw;
   margin: 0 auto;
-  padding-top: 4rem;
+  padding-top: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
 `;
@@ -22,9 +21,9 @@ const H1 = styled.h1`
   margin-bottom: 10px;
 `;
 const InputWrapper = styled.div`
+  margin: 2rem 0;
   padding: 9px 10px;
-  height: max-content;
-  border: 2px white solid;
+  border: 2px var(--grey-tint) solid;
   border-radius: 2rem;
   /* display: flex; */
   /* justify-content: space-between; */
@@ -57,7 +56,7 @@ const Input = styled.input`
   padding-right: 15px;
 `;
 const HightlightedText = styled.span`
-  color: #0a6f97;
+  color: var(--primary-base);
 `;
 const Button = styled.button`
   width: 5rem;
@@ -66,19 +65,26 @@ const Button = styled.button`
   color: white;
   position: absolute;
   transform: translateY(-50%);
-  background-color: #0a6f97;
+  background-color: var(--primary-base);
   right: -2px;
   top: 50%;
-  padding: 10px;
-  border: 0px #0a6f97 solid;
+  padding: 15px;
+  border: 0px var(--primary-base) solid;
   border-radius: 9999px;
+  &:hover,
+  &:active {
+    background-color: var(--primary-shade);
+  }
 
-  /* background-color: alice#0a6f97; */
+  /* background-color: alicevar(--primary-base); */
 `;
 const Image = styled.img`
   width: 40vw;
   border: 2px #fff solid;
   border-radius: 20px;
+`;
+const P = styled.p`
+  font-size: 16px;
 `;
 
 function HeroSection() {
@@ -91,9 +97,9 @@ function HeroSection() {
             Find Your <HightlightedText>Dream Job Today!</HightlightedText>
           </H1>
 
-          <p>
+          <P>
             connecting Talent with Opportunity. Your Gateway to Career Suceess
-          </p>
+          </P>
           <InputWrapper>
             {/* <Input list="country" /> */}
             <Select>
@@ -113,7 +119,11 @@ function HeroSection() {
         </div>
         <div style={{ position: "relative" }}>
           <Image src="../../public/Hero.jpeg" />
-          <HeroCardSmall right="-10%" top="100%" bgColor="#1d4a5c" />
+          <HeroCardSmall
+            right="-10%"
+            top="100%"
+            bgColor="var(--primary-shade)"
+          />
         </div>
       </Hero>
     </FullHero>
