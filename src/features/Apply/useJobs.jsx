@@ -1,5 +1,5 @@
 import { QueryClient, useQuery, useQueryClient } from "@tanstack/react-query";
-import { getAllJobs } from "../services/apiJobs";
+import { getAllJobs } from "../../services/apiJobs";
 
 function useJobs() {
   const {

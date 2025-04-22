@@ -1,5 +1,5 @@
 import useJobs from "./useJobs";
-import JobCard from "../components/JobCard";
+import JobCard from "../../components/JobCard";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -31,8 +31,10 @@ function JobFind() {
       <Aside>this is mine</Aside>
       <JobsDisplay>
         {jobs.map(
-          ({ title, description, type, salary, location, postedDate }) => (
+          ({ id, title, description, type, salary, location, postedDate }) => (
             <JobCard
+              key={id}
+              id={id}
               title={title}
               description={description}
               type={type}

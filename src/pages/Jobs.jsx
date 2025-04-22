@@ -1,4 +1,4 @@
-import JobFind from "../features/JobFind";
+import JobFind from "../features/Apply/JobFind";
 import Navbar from "../components/Navbar";
 
 function Jobs() {

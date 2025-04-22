@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Tag from "./Tag";
 import SalaryRange from "./SalaryRange";
 import getTimeAgo from "../utils/getTimeAgo";
-import Link from "./Link";
+import { Link } from "./Link";
 import { FaImage } from "react-icons/fa";
 import Apply from "../pages/Apply";
 
@@ -33,7 +33,22 @@ const Flex = styled.div`
   justify-content: space-between;
   align-items: baseline;
 `;
-function JobCard({ title, description, type, salary, location, postedDate }) {
+const Description = styled.p`
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+function JobCard({
+  id,
+  title,
+  description,
+  type,
+  salary,
+  location,
+  postedDate,
+}) {
   return (
     <StyledDiv>
       <HiOutlineBookmark
@@ -51,12 +66,12 @@ function JobCard({ title, description, type, salary, location, postedDate }) {
       </LogoConatiner>
 
       <Tag>{type}</Tag>
-      <p>{description}</p>
+      <Description>{description}</Description>
       <Flex>
         <SalaryRange salary={salary}></SalaryRange>
         <P>{getTimeAgo(postedDate)}</P>
       </Flex>
-      <Link to="/apply" onClick={<Apply />}>
+      <Link to={`/jobs/${id}/apply`} onClick={<Apply />}>
         Apply Job
       </Link>
     </StyledDiv>
